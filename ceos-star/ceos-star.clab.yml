@@ -1,0 +1,24 @@
+name: ceos-star
+prefix: ""
+topology:
+  kinds:
+    ceos:
+      kind: ceos
+      image: ceos:4.28.5.1M
+  nodes:
+    ceos-hub:
+      kind: ceos
+    ceos-a:
+      kind: ceos
+    ceos-b:
+      kind: ceos
+    ceos-c:
+      kind: ceos
+    ceos-d:
+      kind: ceos
+
+  links:
+    - endpoints: ["ceos-hub:eth1", "ceos-a:eth1"]
+    - endpoints: ["ceos-hub:eth2", "ceos-b:eth1"]
+    - endpoints: ["ceos-hub:eth3", "ceos-c:eth1"]
+    - endpoints: ["ceos-hub:eth4", "ceos-d:eth1"]
